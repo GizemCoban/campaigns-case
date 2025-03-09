@@ -40,19 +40,23 @@ Uygulama geliştirme sırasında aşağıdaki paketlerden yararlanılmıştır.
 
 - [Angular](https://angular.io/)
 - [Rx.js](https://rxjs.dev/)
-- [Bootsrapt](https://getbootstrap.com/)
+- [Bootstrap](https://getbootstrap.com/)
 
 
 <!-- USAGE EXAMPLES -->
 
 ## Kullanımı
 
-Projeyi <b>npm install</b> komutunu çalıştırdıktan sonra <b>ng serve</b> komutu ile ayağa kaldırabilir veya [Demo](https://campaigns-case.netlify.app/) sayfasından devam edebilirsiniz.
+Projeyi <b>npm install</b>  komutunu çalıştırdıktan sonra ng serve komutu ile başlatabilir veya [Demo](https://campaigns-case.netlify.app/) sayfasından inceleyebilirsiniz.
+
+Login ekranında <b>username</b> ve <b>password</b>  olmak üzere iki giriş alanı bulunmaktadır. Giriş bilgileri şu şekildedir:
+
+- Username: admin
+- Password: 123456
+
+Yanlış kullanıcı adı veya şifre girildiğinde, toast ile uyarı mesajı görüntülenmektedir.
 
 
-Login ekranında username ve password olarak iki tane alan bulunmaktadır. Username <b>admin</b> ve password <b>123456</b> olarak ayarlanmıştır. Yanlış kullanıcı adı veya şifre girildiğin de toast ile uyarı mesajı görüntülenmektedir. <br/> <br/>
+Giriş yaptıktan sonra, kampanyaların listelendiği <b>/campaigns</b> sayfasına yönlendirileceksiniz. Sidebar üzerinden veya Yeni Kampanya butonuna tıklayarak yeni kampanya ekleme sayfasına geçebilirsiniz. Kampanya başarıyla eklendiğinde, bir toaster mesajı görüntülenir ve otomatik olarak <b>/campaigns</b> sayfasına yönlendirilirsiniz.
 
-Login olduktan sonra kampanyaların listelendiği /campaigns sayfasına yönlendirileceksiniz. Sidebar'dan ya da 
-<b>Yeni Kampanya </b> butonuna tıklayarak yeni kampanya ekleyebileceğiniz sayfaya yönleneceksiniz. Kampanya eklemi başarı ise toaster mesajı gösterilmekte ve  /campaigns sayfasına yönlenmektedir.
-
-Kampanyaların her biri bir card olarak gösterilmekte ve 3 noktaya tıklayarak <b>Düzenle veya Silme</b> seçeneklerini seçebilirsiniz.
+Kampanyalar, her biri bir <b>card</b> şeklinde listelenmektedir. Kartların üzerindeki üç noktaya tıklayarak <b>Düzenle veya Silme</b>  seçeneklerini kullanabilirsiniz.
