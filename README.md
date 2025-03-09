@@ -1,27 +1,58 @@
-# CampaignsCase
+<!-- TABLE OF CONTENTS -->
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
+## İçerik
+- [Demo Sayfası](#demo-sayfası)
+- [Kurulum](#kurulum)
+- [Kullanılan Paketler](#kullanılan-paketler)
+- [Kullanımı](#kullanımı)
 
-## Development server
+## Demo Sayfası
+- [Demo](https://campaigns-case.netlify.app/)
+## Kurulum
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Github reposunu klonlayın
 
-## Code scaffolding
+```sh
+git clone https://github.com/GizemCoban/campaigns-case.git
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. master branchine geçin
 
-## Build
+```sh
+git checkout master
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. NPM paketlerini kurun
 
-## Running unit tests
+```sh
+npm install
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+5. Projeyi (Angular) çalıştırma
 
-## Running end-to-end tests
+```sh
+ng serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Kullanılan Paketler
 
-## Further help
+Uygulama geliştirme sırasında aşağıdaki paketlerden yararlanılmıştır.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [Angular](https://angular.io/)
+- [Rx.js](https://rxjs.dev/)
+- [Bootsrapt](https://getbootstrap.com/)
+
+
+<!-- USAGE EXAMPLES -->
+
+## Kullanımı
+
+Projeyi <b>npm install</b> komutunu çalıştırdıktan sonra <b>ng serve</b> komutu ile ayağa kaldırabilir veya [Demo](https://campaigns-case.netlify.app/) sayfasından devam edebilirsiniz.
+
+
+Login ekranında username ve password olarak iki tane alan bulunmaktadır. Username <b>admin</b> ve password <b>123456</b> olarak ayarlanmıştır. Yanlış kullanıcı adı veya şifre girildiğin de toast ile uyarı mesajı görüntülenmektedir. <br/> <br/>
+
+Login olduktan sonra kampanyaların listelendiği /campaigns sayfasına yönlendirileceksiniz. Sidebar'dan ya da 
+<b>Yeni Kampanya </b> butonuna tıklayarak yeni kampanya ekleyebileceğiniz sayfaya yönleneceksiniz. Kampanya eklemi başarı ise toaster mesajı gösterilmekte ve  /campaigns sayfasına yönlenmektedir.
+
+Kampanyaların her biri bir card olarak gösterilmekte ve 3 noktaya tıklayarak <b>Düzenle veya Silme</b> seçeneklerini seçebilirsiniz.
