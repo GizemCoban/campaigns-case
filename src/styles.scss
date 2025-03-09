@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+.tooltip {
+  .tooltip-inner {
+    max-width: 300px !important;
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    color: white !important;
+    padding: 10px !important;
+    font-size: 14px !important;
+    text-align: left !important;
+    border-radius: 6px !important;
+  }
+
+  // Tooltip arrow rengi için
+  &.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: rgba(0, 0, 0, 0.85) !important;
+  }
+
+  &.bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: rgba(0, 0, 0, 0.85) !important;
+  }
+
+  &.bs-tooltip-start .tooltip-arrow::before {
+    border-left-color: rgba(0, 0, 0, 0.85) !important;
+  }
+
+  &.bs-tooltip-end .tooltip-arrow::before {
+    border-right-color: rgba(0, 0, 0, 0.85) !important;
+  }
+}

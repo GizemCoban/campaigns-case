@@ -1,0 +1,182 @@
+.campaign-list {
+  padding: 1.5rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+}
+
+.list-header {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+  margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.75rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .campaign-count {
+    color: #6c757d;
+    font-size: 0.95rem;
+
+    strong {
+      color: #2c3e50;
+    }
+  }
+}
+
+.campaign-card {
+  position: relative;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  background: white;
+  transition: all 0.3s ease;
+  height: 100%;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: #adb5bd;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+  }
+
+  .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    padding: 1.25rem;
+
+    @media (max-width: 768px) {
+      padding: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      max-width: calc(100% - 40px);
+    }
+
+    .btn-icon {
+      padding: 0.25rem;
+      color: #6c757d;
+      border-radius: 6px;
+
+      &:hover {
+        background-color: #e9ecef;
+        color: #2c3e50;
+      }
+    }
+  }
+
+  .card-body {
+    padding: 1.25rem;
+
+    @media (max-width: 768px) {
+      padding: 1rem;
+    }
+  }
+
+  .description-text {
+    color: #6c757d;
+    font-size: 0.95rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    min-height: 42px;
+  }
+
+  .points-section {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+
+    .points-label {
+      color: #495057;
+      font-weight: 500;
+    }
+
+    .points-control {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .points-value {
+        min-width: 40px;
+        text-align: center;
+        font-weight: 600;
+        color: #2c3e50;
+        font-size: 1.1rem;
+      }
+
+      .btn {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        background-color: white;
+        border: 1px solid #dee2e6;
+
+        &:hover:not(:disabled) {
+          background-color: #e9ecef;
+        }
+
+        &:disabled {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  .campaign-footer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #dee2e6;
+    color: #6c757d;
+    font-size: 0.9rem;
+
+    .date-info {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.row {
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+
+  > [class*="col-"] {
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+
+    > [class*="col-"] {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+    }
+  }
+}

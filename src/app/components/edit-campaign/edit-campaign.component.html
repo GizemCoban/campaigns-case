@@ -1,0 +1,41 @@
+<div class="modal" [class.show]="campaign" [style.display]="campaign ? 'block' : 'none'">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Kampanya Düzenle</h5>
+                <button type="button" class="btn-close" (click)="campaignsModalClose()"></button>
+            </div>
+            <div class="modal-body" *ngIf="campaign">
+                <form [formGroup]="editForm">
+                    <div class="mb-3">
+                        <label class="form-label">Kampanya Başlığı *</label>
+                        <input type="text" class="form-control" formControlName="title"
+                            [ngClass]="{'is-invalid': getFormError('title')}">
+                        <div class="invalid-feedback" *ngIf="getFormError('title')">
+                            Kampanya başlığı zorunludur
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Kampanya Açıklaması *</label>
+                        <textarea class="form-control" formControlName="description" rows="3"
+                            [ngClass]="{'is-invalid': getFormError('description')}">
+                        </textarea>
+                        <div class="invalid-feedback" *ngIf="getFormError('description')">
+                            Kampanya açıklaması zorunludur
+                        </div>
+                    </div>
+
+                    <div class="alert alert-danger" *ngIf="submitted && editForm.invalid">
+                        Lütfen zorunlu alanları doldurunuz.
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="campaignsModalClose()">İptal</button>
+                <button type="button" class="btn btn-primary" (click)="campaignsModalSave()">Güncelle</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-backdrop fade show" *ngIf="campaign"></div>

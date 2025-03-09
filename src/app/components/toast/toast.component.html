@@ -1,0 +1,5 @@
+<div class="toast-container" *ngIf="toast$ | async as toast">
+    <div class="custom-toast" [ngClass]="{'success': toast.type === 'success', 'error': toast.type === 'error'}">
+        {{ toast.message }}
+    </div>
+</div>

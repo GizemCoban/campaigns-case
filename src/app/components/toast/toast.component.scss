@@ -1,0 +1,42 @@
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1050;
+}
+
+.custom-toast {
+  min-width: 250px;
+  color: white;
+  border-radius: 4px;
+  padding: 15px;
+  animation: slideIn 0.5s, fadeOut 0.5s 1.5s;
+}
+
+.custom-toast.success {
+  background-color: #28a745;
+}
+
+.custom-toast.error {
+  background-color: #dc3545;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

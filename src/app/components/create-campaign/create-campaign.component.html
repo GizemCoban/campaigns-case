@@ -1,0 +1,51 @@
+<div class="container mt-4">
+    <h2>Yeni Kampanya Oluştur</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <form [formGroup]="campaignForm" (ngSubmit)="createCampaingFormSubmit()">
+                <div class="mb-3">
+                    <label class="form-label">Kampanya Başlığı *</label>
+                    <input type="text" class="form-control" formControlName="title"
+                        [ngClass]="{'is-invalid': getFormError('title')}">
+                    <div class="invalid-feedback" *ngIf="getFormError('title')">
+                        Kampanya başlığı zorunludur
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Kampanya Açıklaması *</label>
+                    <textarea class="form-control" formControlName="description" rows="3"
+                        [ngClass]="{'is-invalid': getFormError('description')}">
+                    </textarea>
+                    <div class="invalid-feedback" *ngIf="getFormError('description')">
+                        Kampanya açıklaması zorunludur
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Kampanya Puanı</label>
+                    <input type="number" class="form-control" formControlName="points" placeholder="Varsayılan: 0"
+                        [class.is-invalid]="getFormError('points')">
+
+                    <div class="invalid-feedback" *ngIf="campaignForm.get('points')?.hasError('min')">
+                        Puan 0 veya daha büyük olmalıdır.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Kampanya Tarihi</label>
+                    <input type="date" class="form-control" formControlName="date">
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Kaydet
+                </button>
+            </form>
+
+            <div class="mt-3" *ngIf="submitted && campaignForm.invalid">
+                <div class="alert alert-danger">
+                    Lütfen zorunlu alanları doldurunuz.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

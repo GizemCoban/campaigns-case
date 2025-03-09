@@ -1,0 +1,18 @@
+.sidebar {
+  height: 100vh;
+  .nav-link {
+    color: #333;
+    padding: 0.5rem 1rem;
+
+    &.active {
+      color: #0d6efd;
+      background-color: rgba(13, 110, 253, 0.1);
+      border-radius: 4px;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+    }
+  }
+}

@@ -1,0 +1,96 @@
+<div class="campaign-list">
+    <div class="list-header">
+        <div
+            class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-3">
+            <div>
+                <h2 class="mb-3">Kampanyalar</h2>
+                <div class="campaign-count">
+                    <div class="alert alert-success">
+                        <i class="bi bi-clipboard-data me-2"></i>
+                        <span>Toplam <strong>{{campaigns.length}}</strong> aktif kampanya</span>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" routerLink="/create-campaign">
+                <i class="bi bi-plus-lg me-2"></i>Yeni Kampanya
+            </button>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="campaigns.length > 0; else noCampaignsTemplate">
+        <div class="col-12 col-md-6 col-xl-4 mb-4" *ngFor="let campaign of campaigns.slice().reverse()">
+            <div class="card campaign-card h-100">
+                <div class="card-status-bar"></div>
+                <div class="card-header bg-transparent">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <h5 class="card-title text-truncate mb-0 me-2" [title]="campaign.title">
+                            {{campaign.title}}
+                        </h5>
+                        <div class="dropdown">
+                            <button class="btn btn-icon" data-bs-toggle="dropdown">
+                                <i class="bi bi-three-dots-vertical"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <button class="dropdown-item" (click)="openEditModal(campaign)">
+                                        <i class="bi bi-pencil me-2"></i>Düzenle
+                                    </button>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <button class="dropdown-item text-danger" (click)="openDeleteModal(campaign)">
+                                        <i class="bi bi-trash me-2"></i>Sil
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body d-flex flex-column">
+                    <p class="card-text description-text" [title]="campaign.description">
+                        {{campaign.description}}
+                    </p>
+
+                    <div class="points-section mt-auto">
+                        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                            <span class="points-label">Kampanya Puanı</span>
+                            <div class="points-control">
+                                <button class="btn btn-sm btn-light" (click)="updatePoints(campaign, false)"
+                                    [disabled]="campaign.points <= 0">
+                                    <i class="bi bi-dash"></i>
+                                </button>
+                                <span class="points-value">{{campaign.points}}</span>
+                                <button class="btn btn-sm btn-light" (click)="updatePoints(campaign, true)">
+                                    <i class="bi bi-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="campaign-footer mt-3">
+                        <div class="date-info">
+                            <i class="bi bi-calendar3 me-2"></i>
+                            {{campaign.date | date:'dd MMM yyyy'}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-edit-campaign [campaign]="selectedCampaign" (close)="editModalClose()" (save)="editModalSave($event)">
+</app-edit-campaign>
+
+<app-delete-campaign *ngIf="campaignToDelete" [campaign]="campaignToDelete" (close)="deleteModalClose()"
+    (confirm)="deleteCampaignItem($event)">
+</app-delete-campaign>
+
+<ng-template #noCampaignsTemplate>
+    <div class="alert alert-warning text-center">
+        <i class="bi bi-exclamation-triangle me-2"></i> Kampanya bulunamadı.
+    </div>
+</ng-template>
