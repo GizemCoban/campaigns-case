@@ -1,16 +1,15 @@
+<header class="navbar navbar-dark bg-dark p-3">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" routerLink="/campaigns" style="cursor: pointer;">
+            <img src="assets/images/logo.png" alt="Moneytolia Logo" height="30" class="me-2">
+            Moneytolia
+        </a>
+        <button class="btn btn-outline-light" (click)="logout()">Çıkış Yap</button>
+    </div>
+</header>
 <div class="container-fluid">
-    <header class="navbar navbar-dark bg-dark p-3">
-        <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center" routerLink="/campaigns" style="cursor: pointer;">
-                <img src="assets/images/logo.png" alt="Moneytolia Logo" height="30" class="me-2">
-                Moneytolia
-            </a>
-            <button class="btn btn-outline-light" (click)="logout()">Çıkış Yap</button>
-        </div>
-    </header>
-
     <div class="row">
-        <nav class="col-md-2 bg-light sidebar p-3">
+        <nav class="col-md-2 bg-light sidebar">
             <div class="position-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
@@ -27,7 +26,7 @@
             </div>
         </nav>
 
-        <main class="col-md-10 ms-sm-auto px-4">
+        <main class="col-md-10">
             <router-outlet></router-outlet>
         </main>
     </div>
